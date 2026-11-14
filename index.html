@@ -1,129 +1,1390 @@
 <!DOCTYPE html>
 <html lang="ka">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>მიწათმოქმედება და კლიმატის ცვლილება</title>
+
+    <title>კლიმატის ცვლილება და მიწათმოქმედება | ჩვენი მომავალი</title>
+
+    <meta name="description" content="საინფორმაციო სიუჟეტი კლიმატის გლობალური ცვლილების, მიწათმოქმედებისა და მდგრადი სოფლის მეურნეობის შესახებ.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        body {
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #eef3ec;
-            color: #26382b;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        header {
-            background: #234b35;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            background: #f5f7f2;
+            color: #26372c;
+            line-height: 1.7;
+        }
+
+        :root {
+            --green: #245b3d;
+            --dark-green: #163b29;
+            --light-green: #e5efe5;
+            --gold: #d5a94e;
+            --text: #26372c;
+            --white: #ffffff;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            width: 100%;
+            background: var(--dark-green);
             color: white;
-            text-align: center;
-            padding: 45px 20px;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        header h1 {
-            font-size: 32px;
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
-        main {
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            color: white;
+
+            background:
+                linear-gradient(rgba(10, 35, 22, 0.72), rgba(10, 35, 22, 0.82)),
+                url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
             max-width: 850px;
-            margin: 30px auto;
-            padding: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--gold);
+            color: #243628;
+            padding: 7px 17px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 65px);
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #d9bd73;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            color: #e3e9e3;
+            margin-bottom: 35px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 14px 27px;
+            background: var(--gold);
+            color: #1c3425;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
             background: white;
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 85px 10%;
+        }
+
+        .section-label {
+            color: #b48a34;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 35px;
+            color: var(--dark-green);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .section-text {
+            max-width: 900px;
+            color: #5a675d;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        /* INTRODUCTION */
+
+        .intro {
+            background: white;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
             border-radius: 12px;
         }
 
-        h2 {
-            color: #28633c;
+        /* STATISTICS */
+
+        .statistics {
+            background: var(--dark-green);
+            color: white;
         }
 
-        p {
-            line-height: 1.8;
+        .statistics .section-title {
+            color: white;
         }
 
-        .section {
-            margin-bottom: 30px;
+        .statistics .section-text {
+            color: #c7d6ca;
         }
 
-        a {
-            color: #28633c;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 45px;
         }
+
+        .stat-card {
+            padding: 30px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: var(--gold);
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            color: #d4dfd5;
+            font-size: 14px;
+        }
+
+        /* PROBLEMS */
+
+        .problems {
+            background: #f5f7f2;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.04);
+            border-bottom: 4px solid var(--green);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: var(--green);
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #68746a;
+            font-size: 15px;
+        }
+
+        /* ECONOMY */
+
+        .economy {
+            background: white;
+        }
+
+        .economy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            margin-top: 35px;
+        }
+
+        .economy-item {
+            padding: 25px;
+            background: #f3f7f1;
+            border-radius: 10px;
+        }
+
+        .economy-item h3 {
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .economy-item p {
+            color: #647066;
+            font-size: 15px;
+        }
+
+        /* RESEARCH */
+
+        .research {
+            background: #edf2eb;
+        }
+
+        .research-card {
+            background: white;
+            padding: 35px;
+            margin-top: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        }
+
+        .research-card h3 {
+            color: var(--green);
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .research-card p {
+            color: #606d63;
+            margin-bottom: 15px;
+        }
+
+        .research-card a {
+            display: inline-block;
+            color: #267047;
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 1px solid #267047;
+        }
+
+        .research-card a:hover {
+            color: #b48a34;
+        }
+
+        .research-number {
+            font-size: 13px;
+            color: #b48a34;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        /* SOLUTIONS */
+
+        .solutions {
+            background: white;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .solution {
+            background: #f3f7f1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .solution img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .solution-content {
+            padding: 23px;
+        }
+
+        .solution h3 {
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+
+        .solution p {
+            color: #647066;
+            font-size: 14px;
+        }
+
+        /* FUTURE */
+
+        .future {
+            color: white;
+            background:
+                linear-gradient(rgba(16, 53, 32, 0.88), rgba(16, 53, 32, 0.88)),
+                url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1800&q=85");
+
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+        }
+
+        .future h2 {
+            color: white;
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+
+        .future p {
+            max-width: 850px;
+            margin: auto;
+            color: #e1e9e0;
+            font-size: 17px;
+        }
+
+        /* CONCLUSION */
+
+        .conclusion {
+            background: #f5f7f2;
+            text-align: center;
+        }
+
+        .conclusion-box {
+            max-width: 950px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 12px;
+            border-left: 6px solid var(--gold);
+        }
+
+        .conclusion-box p {
+            color: #5e6c61;
+            font-size: 16px;
+        }
+
+        /* SOURCES */
+
+        .sources {
+            background: white;
+        }
+
+        .source-list {
+            margin-top: 25px;
+        }
+
+        .source-list a {
+            display: block;
+            padding: 17px 20px;
+            margin-bottom: 12px;
+            background: #f2f6f0;
+            border-radius: 7px;
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .source-list a:hover {
+            background: var(--light-green);
+            transform: translateX(5px);
+        }
+
+        /* FOOTER */
 
         footer {
-            background: #234b35;
+            background: var(--dark-green);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 35px 10%;
         }
+
+        footer h3 {
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #d0ddd1;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .economy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+
+            .hero {
+                padding: 70px 7%;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+        }
+
     </style>
+
 </head>
 
 <body>
 
-<header>
-    <h1>მიწათმოქმედება და კლიმატის ცვლილება</h1>
-    <p>როგორ შევინარჩუნოთ ჩვენი პლანეტის მომავალი?</p>
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        CLIMATE<span>+</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">მთავარი</a></li>
+
+        <li><a href="#problem">პრობლემა</a></li>
+
+        <li><a href="#economy">ეკონომიკა</a></li>
+
+        <li><a href="#research">კვლევები</a></li>
+
+        <li><a href="#solutions">გამოსავალი</a></li>
+
+        <li><a href="#sources">წყაროები</a></li>
+
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="tag">გეოგრაფია • გარემო • მომავალი</span>
+
+        <h1>
+            მიწათმოქმედება <span>კლიმატის ცვლილების</span> ეპოქაში
+        </h1>
+
+        <p>
+            როგორ ცვლის გლობალური დათბობა სოფლის მეურნეობას,
+            რა გავლენას ახდენს მსოფლიო ეკონომიკაზე და როგორ
+            შეგვიძლია შევინარჩუნოთ ჩვენი პლანეტა მომავალი
+            თაობებისთვის?
+        </p>
+
+        <a href="#problem" class="hero-button">
+            გაეცანი სიუჟეტს ↓
+        </a>
+
+    </div>
+
 </header>
 
-<main>
 
-    <div class="section">
-        <h2>კლიმატის გლობალური ცვლილება</h2>
+<!-- INTRODUCTION -->
 
-        <p>
-            კლიმატის ცვლილება გავლენას ახდენს ტემპერატურაზე,
-            ნალექებზე, წყლის რესურსებსა და ნიადაგის ნაყოფიერებაზე.
-            განსაკუთრებით მოწყვლადია სოფლის მეურნეობა.
-        </p>
+<section class="intro" id="problem">
+
+    <div class="intro-grid">
+
+        <div>
+
+            <div class="section-label">01 / მთავარი პრობლემა</div>
+
+            <h2 class="section-title">
+                კლიმატის ცვლილება და სოფლის მეურნეობის მომავალი
+            </h2>
+
+            <p class="section-text">
+
+                კლიმატის გლობალური ცვლილება თანამედროვე მსოფლიოს
+                ერთ-ერთი მნიშვნელოვანი გამოწვევაა. დედამიწაზე
+                ტემპერატურის მატება, ნალექების არათანაბარი განაწილება,
+                გვალვები და წყალდიდობები მნიშვნელოვან გავლენას
+                ახდენს ბუნებრივ გარემოზე.
+
+            </p>
+
+            <p class="section-text">
+
+                განსაკუთრებით მოწყვლადია სოფლის მეურნეობა,
+                რადგან მცენარეთა ზრდა და მოსავლიანობა პირდაპირ
+                არის დამოკიდებული ტემპერატურაზე, წყლის რესურსებზე,
+                ნიადაგის ნაყოფიერებასა და ამინდის პირობებზე.
+
+            </p>
+
+            <p class="section-text">
+
+                ამასთან, სოფლის მეურნეობა თავადაც მონაწილეობს
+                კლიმატის ცვლილებაში. სასოფლო-სამეურნეო საქმიანობის
+                შედეგად გამოიყოფა სათბურის აირები, მათ შორის
+                მეთანი და აზოტის ქვეჟანგი. ტყეების სასოფლო-სამეურნეო
+                დანიშნულებით გაჩეხვა კი ამცირებს ნახშირბადის
+                შთანთქმის შესაძლებლობას.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <img
+                class="intro-image"
+                src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=1000&q=85"
+                alt="სასოფლო-სამეურნეო მიწები"
+            >
+
+        </div>
+
     </div>
 
-    <div class="section">
-        <h2>სოციალურ-ეკონომიკური გავლენა</h2>
+</section>
 
-        <p>
-            მოსავლიანობის შემცირებამ შეიძლება გამოიწვიოს
-            საკვების ფასების ზრდა, ფერმერების შემოსავლების
-            შემცირება და სასურსათო უსაფრთხოების გაუარესება.
-        </p>
+
+<!-- STATISTICS -->
+
+<section class="statistics">
+
+    <div class="section-label">02 / მნიშვნელოვანი ფაქტები</div>
+
+    <h2 class="section-title">
+        რას გვეუბნება მეცნიერება?
+    </h2>
+
+    <p class="section-text">
+
+        PNAS-ში გამოქვეყნებული სამეცნიერო კვლევები გვიჩვენებს,
+        რამდენად მნიშვნელოვანია კლიმატის ცვლილების გავლენის
+        შეფასება სოფლის მეურნეობასა და ნიადაგზე.
+
+    </p>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <h3>38%</h3>
+
+            <p>
+                დედამიწის ხმელეთის დაახლოებით ამ ნაწილს
+                სოფლის მეურნეობა მოიცავს.
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>30–66%</h3>
+
+            <p>
+                წყლისმიერი ნიადაგის ეროზიის შესაძლო ზრდა
+                2070 წლისთვის სხვადასხვა კლიმატური სცენარის მიხედვით.
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>17%</h3>
+
+            <p>
+                სოფლის მეურნეობის გლობალური მოსავლიანობის
+                საშუალო ბიოფიზიკური შემცირების შეფასება
+                2050 წლისთვის ერთ-ერთ PNAS კვლევაში.
+            </p>
+
+        </div>
+
     </div>
 
-    <div class="section">
-        <h2>რა არის გამოსავალი?</h2>
+    <p style="font-size:12px; color:#aebfb1; margin-top:25px;">
 
-        <p>
-            საჭიროა წვეთოვანი მორწყვა, ნიადაგის დამცავი
-            მიწათმოქმედება, აგროტყის მეურნეობა, გამძლე
-            კულტურების მოყვანა და სასუქების გონივრული გამოყენება.
-        </p>
+        წყაროები: Borrelli et al. (2020); Nelson et al. (2014).
+        მაჩვენებლები სხვადასხვა კვლევასა და მოდელურ სცენარს ეფუძნება.
+
+    </p>
+
+</section>
+
+
+<!-- CONSEQUENCES -->
+
+<section class="problems">
+
+    <div class="section-label">03 / კლიმატის ცვლილების შედეგები</div>
+
+    <h2 class="section-title">
+        რა საფრთხეებს აწყდება მიწათმოქმედება?
+    </h2>
+
+    <p class="section-text">
+
+        კლიმატური პირობების ცვლილება სოფლის მეურნეობაზე
+        რამდენიმე მნიშვნელოვანი მიმართულებით მოქმედებს.
+
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">☀️</div>
+
+            <h3>გვალვები და სიცხე</h3>
+
+            <p>
+
+                ტემპერატურის მატება აძლიერებს წყლის აორთქლებას
+                და ზოგიერთ რეგიონში ზრდის გვალვების რისკს.
+                წყლის ნაკლებობა აფერხებს მცენარეთა განვითარებას
+                და ამცირებს მოსავლიანობას.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🌧️</div>
+
+            <h3>წყალდიდობები და ძლიერი ნალექი</h3>
+
+            <p>
+
+                ინტენსიურმა ნალექმა შესაძლოა დატბოროს
+                სასოფლო-სამეურნეო მიწები, დააზიანოს ნათესები
+                და გააძლიეროს ნიადაგის ეროზია.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🌱</div>
+
+            <h3>ნიადაგის ნაყოფიერების შემცირება</h3>
+
+            <p>
+
+                ნიადაგის ზედა ნაყოფიერი ფენის დაკარგვა
+                ამცირებს მცენარეებისთვის აუცილებელი
+                საკვები ნივთიერებების რაოდენობას და
+                საფრთხეს უქმნის მომავალ მოსავალს.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🐝</div>
+
+            <h3>ბიომრავალფეროვნების შემცირება</h3>
+
+            <p>
+
+                ეკოსისტემების ცვლილება საფრთხეს უქმნის
+                მცენარეებს, დამამტვერიანებლებსა და სხვა
+                ორგანიზმებს, რომლებიც მნიშვნელოვან როლს
+                ასრულებენ სოფლის მეურნეობაში.
+
+            </p>
+
+        </div>
+
     </div>
 
-    <div class="section">
-        <h2>სამეცნიერო წყაროები</h2>
+</section>
 
-        <p>
-            <a href="https://www.pnas.org/doi/full/10.1073/pnas.2001403117">
-                PNAS - Soil erosion and climate change
-            </a>
-        </p>
 
-        <p>
-            <a href="https://www.pnas.org/content/pnas/111/9/3274.full.pdf">
-                PNAS - Climate change effects on agriculture
-            </a>
-        </p>
+<!-- ECONOMY -->
 
-        <p>
-            <a href="https://www.pnas.org/doi/pdf/10.1073/pnas.2404839122">
-                PNAS - Improved crop varieties
-            </a>
-        </p>
+<section class="economy" id="economy">
+
+    <div class="section-label">04 / სოციალურ-ეკონომიკური გავლენა</div>
+
+    <h2 class="section-title">
+        როგორ შეიცვლება მსოფლიოს ქვეყნების ეკონომიკა?
+    </h2>
+
+    <p class="section-text">
+
+        კლიმატის ცვლილების შესარბილებლად საჭირო ღონისძიებების
+        გატარება გავლენას ახდენს როგორც განვითარებულ, ისე
+        განვითარებად ქვეყნებზე. ცვლილებები ეხება წარმოებას,
+        დასაქმებას, ვაჭრობასა და მოსახლეობის ცხოვრების დონეს.
+
+    </p>
+
+    <div class="economy-grid">
+
+        <div class="economy-item">
+
+            <h3>01. სოფლის მოსახლეობა</h3>
+
+            <p>
+
+                ფერმერებს მოუწევთ საქმიანობის მეთოდების შეცვლა.
+                ახალი ტექნოლოგიების დანერგვა თავდაპირველად
+                დამატებით ფინანსურ რესურსებს მოითხოვს.
+                თუმცა გრძელვადიან პერიოდში წყლისა და ნიადაგის
+                ეფექტიანი გამოყენება წარმოების მდგრადობას
+                შეუწყობს ხელს.
+
+            </p>
+
+        </div>
+
+
+        <div class="economy-item">
+
+            <h3>02. საკვების ფასები</h3>
+
+            <p>
+
+                თუ კლიმატური პირობების გამო მოსავლიანობა
+                შემცირდება, შესაძლოა გაიზარდოს ზოგიერთი
+                სასოფლო-სამეურნეო პროდუქტის ფასი.
+                ეს განსაკუთრებით მძიმე იქნება დაბალი
+                შემოსავლის მქონე ოჯახებისთვის.
+
+            </p>
+
+        </div>
+
+
+        <div class="economy-item">
+
+            <h3>03. დასაქმება და ტექნოლოგიები</h3>
+
+            <p>
+
+                თანამედროვე სარწყავი სისტემების, განახლებადი
+                ენერგიისა და ეკოლოგიური ტექნოლოგიების
+                განვითარება შექმნის ახალ სამუშაო ადგილებს.
+                ამავე დროს, საჭირო გახდება ფერმერების
+                გადამზადება.
+
+            </p>
+
+        </div>
+
+
+        <div class="economy-item">
+
+            <h3>04. განვითარებადი ქვეყნები</h3>
+
+            <p>
+
+                ქვეყნები, რომელთა ეკონომიკა დიდწილად
+                სოფლის მეურნეობაზეა დამოკიდებული, შეიძლება
+                განსაკუთრებით დაზარალდნენ. მათ სჭირდებათ
+                ფინანსური დახმარება, ტექნოლოგიები და
+                საერთაშორისო თანამშრომლობა.
+
+            </p>
+
+        </div>
+
+
+        <div class="economy-item">
+
+            <h3>05. საერთაშორისო ვაჭრობა</h3>
+
+            <p>
+
+                სხვადასხვა რეგიონში მოსავლიანობის ცვლილება
+                გავლენას ახდენს სასოფლო-სამეურნეო პროდუქციის
+                მიწოდებაზე, იმპორტზე, ექსპორტსა და
+                საერთაშორისო სავაჭრო ურთიერთობებზე.
+
+            </p>
+
+        </div>
+
+
+        <div class="economy-item">
+
+            <h3>06. გრძელვადიანი განვითარება</h3>
+
+            <p>
+
+                ეკოლოგიურად მდგრადი სოფლის მეურნეობა
+                ხელს უწყობს ბუნებრივი რესურსების შენარჩუნებას,
+                ამცირებს გარემოსდაცვით რისკებს და ქმნის
+                უფრო სტაბილური ეკონომიკური განვითარების
+                შესაძლებლობას.
+
+            </p>
+
+        </div>
+
     </div>
 
-</main>
+</section>
+
+
+<!-- SCIENTIFIC RESEARCH -->
+
+<section class="research" id="research">
+
+    <div class="section-label">05 / სამეცნიერო კვლევები</div>
+
+    <h2 class="section-title">
+        რას გვიჩვენებს PNAS-ის კვლევები?
+    </h2>
+
+    <p class="section-text">
+
+        ქვემოთ წარმოდგენილია სამეცნიერო კვლევები,
+        რომლებიც გამოქვეყნებულია ამერიკის მეცნიერებათა
+        ეროვნული აკადემიის ჟურნალში — Proceedings of
+        the National Academy of Sciences (PNAS).
+
+    </p>
+
+
+    <div class="research-card">
+
+        <div class="research-number">კვლევა №1</div>
+
+        <h3>
+            Land use and climate change impacts on global soil erosion by water (2015–2070)
+        </h3>
+
+        <p>
+
+            Pasquale Borrelli-ისა და თანაავტორების 2020 წლის
+            კვლევა იკვლევს, როგორ მოქმედებს მიწათსარგებლობის
+            ცვლილება და კლიმატი ნიადაგის წყლისმიერ ეროზიაზე.
+
+            კვლევის მოდელირების მიხედვით, კლიმატის ცვლილებამ
+            2070 წლისთვის წყლისმიერი ეროზია სხვადასხვა
+            სცენარის მიხედვით შესაძლოა 30–66%-ით გაზარდოს.
+
+            ავტორები ხაზს უსვამენ ნიადაგის დაცვის,
+            კონსერვაციული მიწათმოქმედებისა და ეფექტიანი
+            სახელმწიფო პოლიტიკის მნიშვნელობას.
+
+        </p>
+
+        <a href="https://www.pnas.org/doi/full/10.1073/pnas.2001403117" target="_blank">
+
+            გაეცანი სრულ სამეცნიერო კვლევას →
+
+        </a>
+
+    </div>
+
+
+    <div class="research-card">
+
+        <div class="research-number">კვლევა №2</div>
+
+        <h3>
+            Climate change effects on agriculture: Economic responses to biophysical shocks
+        </h3>
+
+        <p>
+
+            Gerald C. Nelson-ისა და თანაავტორების 2014 წლის
+            კვლევა აანალიზებს კლიმატის ცვლილების გავლენას
+            სოფლის მეურნეობის ეკონომიკურ პროცესებზე.
+
+            კვლევაში გამოყენებული მოდელების მიხედვით,
+            2050 წლისთვის მოსავლიანობის საშუალო ბიოფიზიკური
+            ეფექტი 17%-იან შემცირებას აჩვენებდა ერთ-ერთ
+            მაღალი ემისიების სცენარში, დამატებითი CO₂
+            განოყიერების ეფექტის გაუთვალისწინებლად.
+
+            ეკონომიკური ადაპტაციის რეაქციების გათვალისწინებით,
+            მოსავლიანობის შემცირება 11%-მდე შეფასდა,
+            სასოფლო-სამეურნეო ფართობი გაიზარდა 11%-ით,
+            ხოლო მოხმარება შემცირდა 3%-ით.
+
+        </p>
+
+        <a href="https://www.pnas.org/content/pnas/111/9/3274.full.pdf" target="_blank">
+
+            გაეცანი სრულ სამეცნიერო კვლევას →
+
+        </a>
+
+    </div>
+
+
+    <div class="research-card">
+
+        <div class="research-number">კვლევა №3</div>
+
+        <h3>
+            Adoption of improved crop varieties limited biodiversity losses, terrestrial carbon emissions, and cropland expansion in the tropics
+        </h3>
+
+        <p>
+
+            Uris Lantz C. Baldos-ისა და თანაავტორების კვლევა
+            იკვლევს გაუმჯობესებული სასოფლო-სამეურნეო
+            ჯიშების გავრცელების გავლენას გარემოზე.
+
+            კვლევა აანალიზებს 1961–2015 წლების მონაცემებს
+            და გვიჩვენებს, რომ კულტურების გაუმჯობესებას
+            შეუძლია ხელი შეუწყოს მოსავლიანობის ზრდას,
+            სასოფლო-სამეურნეო მიწების გაფართოების შემცირებას
+            და ბიომრავალფეროვნების დაცვას.
+
+        </p>
+
+        <a href="https://www.pnas.org/doi/pdf/10.1073/pnas.2404839122" target="_blank">
+
+            გაეცანი სრულ სამეცნიერო კვლევას →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- SOLUTIONS -->
+
+<section class="solutions" id="solutions">
+
+    <div class="section-label">06 / პრობლემის გადაჭრის გზები</div>
+
+    <h2 class="section-title">
+        როგორ უნდა შეიცვალოს სასოფლო-სამეურნეო საქმიანობა?
+    </h2>
+
+    <p class="section-text">
+
+        კლიმატის ცვლილების შესარბილებლად და მასთან
+        ადაპტაციისთვის აუცილებელია თანამედროვე,
+        რესურსების დამზოგავი და ეკოლოგიურად მდგრადი
+        მიწათმოქმედების მეთოდების გამოყენება.
+
+    </p>
+
+
+    <div class="solutions-grid">
+
+        <div class="solution">
+
+            <img
+                src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=85"
+                alt="სარწყავი სისტემები"
+            >
+
+            <div class="solution-content">
+
+                <h3>წვეთოვანი მორწყვა</h3>
+
+                <p>
+
+                    წყალი პირდაპირ მცენარის ფესვებთან მიეწოდება,
+                    რაც ამცირებს წყლის დანაკარგს და ხელს უწყობს
+                    რესურსების ეფექტიან გამოყენებას.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="solution">
+
+            <img
+                src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=85"
+                alt="სასოფლო-სამეურნეო კულტურები"
+            >
+
+            <div class="solution-content">
+
+                <h3>გამძლე კულტურების მოყვანა</h3>
+
+                <p>
+
+                    გვალვისა და მაღალი ტემპერატურის მიმართ
+                    გამძლე მცენარეული ჯიშების გამოყენება
+                    ხელს უწყობს მოსავლის შენარჩუნებას.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="solution">
+
+            <img
+                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=85"
+                alt="ტყე და ბუნება"
+            >
+
+            <div class="solution-content">
+
+                <h3>აგროტყის მეურნეობა</h3>
+
+                <p>
+
+                    სასოფლო-სამეურნეო მიწებზე ხეების
+                    ინტეგრირება ხელს უწყობს ნიადაგის დაცვას,
+                    ბიომრავალფეროვნების შენარჩუნებასა და
+                    ნახშირბადის დაგროვებას.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="solution">
+
+            <img
+                src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=85"
+                alt="ბუნებრივი ეკოსისტემა"
+            >
+
+            <div class="solution-content">
+
+                <h3>ნიადაგის დაცვა</h3>
+
+                <p>
+
+                    ნიადაგის მინიმალური დამუშავება,
+                    საფარი კულტურების გამოყენება და
+                    მოსავლის მონაცვლეობა ამცირებს
+                    ეროზიის რისკს და ინარჩუნებს ნიადაგის
+                    ნაყოფიერებას.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="solution">
+
+            <img
+                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=85"
+                alt="განახლებადი ენერგია"
+            >
+
+            <div class="solution-content">
+
+                <h3>განახლებადი ენერგია</h3>
+
+                <p>
+
+                    მზისა და ქარის ენერგიის გამოყენება
+                    ამცირებს წიაღისეულ საწვავზე
+                    დამოკიდებულებას და ენერგეტიკული
+                    სისტემის ემისიებს.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="solution">
+
+            <img
+                src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?auto=format&fit=crop&w=800&q=85"
+                alt="სასოფლო-სამეურნეო მეურნეობა"
+            >
+
+            <div class="solution-content">
+
+                <h3>სასუქების გონივრული გამოყენება</h3>
+
+                <p>
+
+                    სასუქების საჭირო რაოდენობით გამოყენება,
+                    ნიადაგის ანალიზი და ორგანული ნარჩენების
+                    სწორად მართვა ამცირებს ზედმეტ ემისიებს
+                    და გარემოს დაბინძურებას.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FUTURE GENERATIONS -->
+
+<section class="future">
+
+    <div class="section-label">07 / მომავალი თაობები</div>
+
+    <h2>
+        როგორი პლანეტა უნდა დავუტოვოთ მომავალ თაობებს?
+    </h2>
+
+    <p>
+
+        მომავალი თაობების კეთილდღეობა დამოკიდებულია
+        იმ გადაწყვეტილებებზე, რომლებსაც დღეს მივიღებთ.
+
+        აუცილებელია სახელმწიფოების თანამშრომლობა,
+        მეცნიერების განვითარება, ფერმერების განათლება,
+        ეკოლოგიური ტექნოლოგიების ხელმისაწვდომობა
+        და ბუნებრივი რესურსების პასუხისმგებლობით გამოყენება.
+
+        მხოლოდ ერთობლივი მოქმედებით შევძლებთ ისეთი
+        სოფლის მეურნეობის განვითარებას, რომელიც
+        უზრუნველყოფს საკვებს, იცავს გარემოს და
+        ამცირებს კლიმატის ცვლილების გამომწვევ მიზეზებს.
+
+    </p>
+
+</section>
+
+
+<!-- CONCLUSION -->
+
+<section class="conclusion">
+
+    <div class="section-label">08 / საბოლოო დასკვნა</div>
+
+    <h2 class="section-title">
+        ჩვენი მომავალი ჩვენს გადაწყვეტილებებზეა დამოკიდებული
+    </h2>
+
+    <div class="conclusion-box">
+
+        <p>
+
+            კლიმატის გლობალური ცვლილება გავლენას ახდენს
+            არა მხოლოდ ბუნებრივ გარემოზე, არამედ მსოფლიოს
+            სოციალურ და ეკონომიკურ განვითარებაზეც.
+
+            მისი შედეგების შესარბილებლად აუცილებელია
+            სოფლის მეურნეობის გარდაქმნა და თანამედროვე
+            ეკოლოგიური მეთოდების დანერგვა.
+
+            მიუხედავად იმისა, რომ ამ ცვლილებებს
+            თავდაპირველად ფინანსური რესურსები სჭირდება,
+            გრძელვადიან პერსპექტივაში ისინი ხელს უწყობს
+            ბუნებრივი რესურსების დაცვას, სასურსათო
+            უსაფრთხოებასა და ეკონომიკურ მდგრადობას.
+
+            მიწათმოქმედება უნდა განვითარდეს ისე, რომ
+            ადამიანებმა მიიღონ საკვები, ხოლო ბუნებამ
+            შეინარჩუნოს აღდგენის შესაძლებლობა.
+
+            მომავალი თაობების კეთილდღეობისთვის
+            აუცილებელია დღესვე დავიწყოთ მოქმედება.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SOURCES -->
+
+<section class="sources" id="sources">
+
+    <div class="section-label">09 / გამოყენებული წყაროები</div>
+
+    <h2 class="section-title">
+        სამეცნიერო და საინფორმაციო წყაროები
+    </h2>
+
+    <p class="section-text">
+
+        პროექტის მომზადებისას გამოყენებულია
+        Proceedings of the National Academy of Sciences
+        (PNAS)-ში გამოქვეყნებული სამეცნიერო ნაშრომები.
+
+        კვლევების სრული ტექსტების გაცნობა შესაძლებელია
+        ქვემოთ მოცემული ბმულებით.
+
+    </p>
+
+    <div class="source-list">
+
+        <a href="https://www.pnas.org/doi/full/10.1073/pnas.2001403117" target="_blank">
+
+            1. Borrelli et al. (2020) — Land use and climate change impacts on global soil erosion by water.
+
+        </a>
+
+        <a href="https://www.pnas.org/content/pnas/111/9/3274.full.pdf" target="_blank">
+
+            2. Nelson et al. (2014) — Climate change effects on agriculture: Economic responses to biophysical shocks.
+
+        </a>
+
+        <a href="https://www.pnas.org/doi/pdf/10.1073/pnas.2404839122" target="_blank">
+
+            3. Baldos et al. (2025) — Adoption of improved crop varieties and environmental impacts.
+
+        </a>
+
+        <a href="https://www.pnas.org/" target="_blank">
+
+            4. Proceedings of the National Academy of Sciences — ოფიციალური ვებგვერდი.
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
-    <p>ჩვენი მომავალი ჩვენს დღევანდელ გადაწყვეტილებებზეა დამოკიდებული.</p>
-    <p>გეოგრაფიის კომპლექსური დავალება</p>
+
+    <h3>CLIMATE+ | ჩვენი მომავალი</h3>
+
+    <p>
+
+        გეოგრაფიის კომპლექსური დავალება
+
+    </p>
+
+    <p style="margin-top:10px;">
+
+        მიწათმოქმედება • კლიმატის ცვლილება • მდგრადი განვითარება
+
+    </p>
+
+    <p style="margin-top:20px; color:#9eafa0;">
+
+        დავიცვათ ბუნება დღეს, მომავალი თაობების საკეთილდღეოდ.
+
+    </p>
+
 </footer>
 
+
 </body>
+
 </html>
